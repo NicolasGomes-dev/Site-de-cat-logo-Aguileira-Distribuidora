@@ -15,19 +15,19 @@ export function CategoryCard({
     manufacturers,
 }: CategoryCardProps) {
     return (
-        <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition min-h-[500px] min-w-[1300px]">
+        <div className="w-full rounded-xl border p-8 shadow-sm hover:shadow-md transition">
 
 
             <p className="mt-5 mb-3 text-lg font-bold uppercase tracking-wide text-[#303271]">
                 Fabricantes
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {
                     manufacturers.map((brand) => (
                         <div
                             key={brand.name}
-                            className="bg-white border border-gray-300 rounded-xl w-50 h-20 flex items-center justify-center p-3">
+                            className="flex h-20 w-full items-center justify-center rounded-xl border border-gray-200 bg-white p-3 transition-all duration-300 hover:shadow-lg">
                             <Image
                                 src={brand.logo}
                                 alt={brand.name}

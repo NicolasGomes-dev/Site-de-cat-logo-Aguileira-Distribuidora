@@ -6,7 +6,7 @@ export default function ProdutosPage() {
     <div className="flex min-h-screen flex-col bg-background">
       {/* <BreadcrumbBar current="PRODUTOS" /> */}
 
-      <main className="flex-1 pt-0">
+      <main className="flex-1 pt-32 sm:pt-28 lg:pt-36">
         <ProductsGrid />
       </main>
     </div>

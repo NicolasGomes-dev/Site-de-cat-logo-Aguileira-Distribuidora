@@ -35,14 +35,14 @@ export function SiteHeader() {
     <header className="fixed top-0 left-0 w-full z-50">
       {/* Barra superior */}
       <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="https://castrillon.portaldocliente.online/"
-            className="text-sm font-medium transition-colors hover:text-brand-red"
+            className="text-center text-xs leading-relaxed sm:text-sm sm:text-left font-medium transition-colors hover:text-brand-red"
           >
             Acesse o Portal do Cliente para Segunda Via de Boletos e NFe.
           </Link>
-          <ul className="flex items-center gap-2">
+          <ul className="flex items-center justify-center gap-2 sm:justify-end">
             {socials.map(({ label, href, Icon }) => (
               <li key={label}>
                 <Link
@@ -61,9 +61,7 @@ export function SiteHeader() {
       {/* Faixa principal */}
       <div className="border-b border-border bg-white shadow-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4">
-          <Link href="#" aria-label="Castrillon Autopeças - Página inicial">
-            <Logo />
-          </Link>
+          <Logo />
 
           <div className="hidden lg:flex items-center gap-6">
             <nav aria-label="Menu principal">

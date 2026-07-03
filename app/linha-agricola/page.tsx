@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react"
 
 export default function LinhaAgricolaPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
+    <main className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-12">
       <Link
         href="/"
         className="mb-6 inline-flex items-center gap-2 rounded-lg bg-[#C20E1A] px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#A80C18] hover:shadow-lg"
@@ -18,7 +18,7 @@ export default function LinhaAgricolaPage() {
         Linha Agrícola
       </h1>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {agriculturalProducts.map((product) => (
           <CategoryCard
             key={product.title}
