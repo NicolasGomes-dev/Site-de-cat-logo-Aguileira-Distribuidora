@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 
 export default function LinhaPesadaPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
+    <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 py-12">
 
       <Link
         href="/"
@@ -18,7 +18,7 @@ export default function LinhaPesadaPage() {
         Linha Pesada e Extra Pesada
       </h1>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="w-full">
         {heavyProducts.map((product) => (
           <CategoryCard
             key={product.title}

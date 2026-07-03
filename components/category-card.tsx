@@ -15,7 +15,7 @@ export function CategoryCard({
     manufacturers,
 }: CategoryCardProps) {
     return (
-        <div className="w-full rounded-xl border p-8 shadow-sm hover:shadow-md transition">
+        <div className="w-full border rounded-xl p-6 shadow-sm hover:shadow-md transition">
 
 
             <p className="mt-5 mb-3 text-lg font-bold uppercase tracking-wide text-[#303271]">
