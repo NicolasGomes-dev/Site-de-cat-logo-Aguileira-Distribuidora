@@ -107,7 +107,7 @@ export const lightProducts = [
 
             {
                 name: "Kyb",
-                logo: "/Brands/kyb.png"
+                logo: "/brands/kyb.png"
             },
 
             {
