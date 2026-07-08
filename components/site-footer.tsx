@@ -29,8 +29,7 @@ export function SiteFooter() {
           {/* Coluna direita */}
           <div className="space-y-8">
             <div className="text-sm leading-relaxed text-white/90">
-              <p>Horário de Atendimento: Segunda a Sexta 07:30 às 18:00</p>
-              <p>Sábado: 7:30 às 12:00 (Exceto feriados)</p>
+              <p>Horário de Atendimento: Segunda a Sexta 08:00 às 18:00</p>
             </div>
 
             <div>
