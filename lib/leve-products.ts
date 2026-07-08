@@ -217,7 +217,7 @@ export const lightProducts = [
 
             {
                 name: "Yokomitsu",
-                logo: "/brands/Yokomitsu.png"
+                logo: "/brands/yokomitsu.png"
             },
 
             {
