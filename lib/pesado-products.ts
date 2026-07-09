@@ -100,7 +100,73 @@ export const heavyProducts = [
             {
                 name: "Timken",
                 logo: "/brands/timken.png"
-            }   
+            },
+
+            {
+                name: "MecPar",
+                logo: "/brands/mecpar.png"
+            },
+
+            {
+                name: "Meritor",
+                logo: "/brands/meritor.png"
+            },
+
+            {
+                name: "MWM",
+                logo: "/brands/mwm.png"
+            },
+
+            {
+                name: "Okubo",
+                logo: "/brands/okubo.png"
+            },
+
+            {
+                name: "Orgus",
+                logo: "/brands/orgus.png"
+            },
+
+            {
+                name: "Parker",
+                logo: "/brands/parker.png"
+            },
+
+            {
+                name: "Perkins",
+                logo: "/brands/perkins.png"
+            },
+
+            {
+                name: "Pradolux",
+                logo: "/brands/pradolux.jpg"
+            },
+
+            {
+                name: "Quinelato",
+                logo: "/brands/quinelato.jpg"
+            },
+
+            {
+                name: "Rei",
+                logo: "/brands/rei.png"
+            },
+
+            {
+                name: "ReserPlastic",
+                logo: "/brands/reserplastic.png"
+            },
+
+            {
+                name: "RKT Diesel",
+                logo: "/brands/rktdiesel.png"
+            },
+
+
+            {
+                name: "Rodip",
+                logo: "/brands/rodip.jpg"
+            }
         ],
     },
 

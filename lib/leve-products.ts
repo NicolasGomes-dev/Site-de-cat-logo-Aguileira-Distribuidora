@@ -587,7 +587,81 @@ export const lightProducts = [
             {
                 name: "Urba Brosol",
                 logo: "/brands/urbabrosol.jpg"
-            }
+            },
+
+            {
+                name: "Ampri",
+                logo: "/brands/ampri.png"
+            },
+
+            {
+                name: "ATE",
+                logo: "/brands/ate.png"
+            },
+            
+            {
+                name: "Axios",
+                logo: "/brands/axios.png"
+            },
+
+            {
+                name: "BCR",
+                logo: "/brands/bcr.png"
+            },
+            
+            {
+                name: "Delphi",
+                logo: "/brands/delphi.png"
+            },
+            {
+                name: "Fania",
+                logo: "/brands/fania.jpg"
+            },
+
+            {
+                name: "Fey",
+                logo: "/brands/fey.jpg"
+            },
+
+            {
+                name: "Gate",
+                logo: "/brands/gate.jpg"
+            },
+
+            {
+                name: "GM",
+                logo: "/brands/gm.jpg"
+            },
+
+            {
+                name: "Ima",
+                logo: "/brands/ima.jpg"
+            },
+
+            {
+                name: "Ina",
+                logo: "/brands/ina.png"
+            },
+            
+            {
+                name: "IRB",
+                logo: "/brands/irb.png"
+            },
+
+            {
+                name: "Jamaica",
+                logo: "/brands/jamaica.avif"
+            },
+
+            {
+                name: "Lonil",
+                logo: "/brands/lonil.jpg"
+            },
+
+            {
+                name: "Luk",
+                logo: "/brands/luk.png"
+            },
 
         ],
     },
