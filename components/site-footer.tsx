@@ -81,7 +81,7 @@ export function SiteFooter() {
           <p className="leading-relaxed">
             © 2026. Aguileira Ditribuidora de Peças. Todos os direitos reservados.
             <br />
-            Castrillon Autopeças Ltda. CNPJ: 37.525.771/0001-02
+            Aguileira Distribuidora Ltda. CNPJ: 37.525.771/0001-02
           </p>
         </div>
       </div>
