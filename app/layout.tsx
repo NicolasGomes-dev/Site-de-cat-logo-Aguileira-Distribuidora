@@ -19,7 +19,7 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
-  title: 'Aguileira Ditribuidora de Peças – mais de 1 milhão de peças em estoque',
+  title: 'Aguilera Ditribuidora de Peças – mais de 1 milhão de peças em estoque',
   description:
     'Linha Agrícola, Leve e Utilitários, Pesada e Extra Pesada. Mais de 1 milhão de peças em estoque na Castrillon Autopeças.',
   generator: 'v0.app',

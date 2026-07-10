@@ -79,9 +79,9 @@ export function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
           <p className="leading-relaxed">
-            © 2026. Aguileira Ditribuidora de Peças. Todos os direitos reservados.
+            © 2026. Aguilera Distribuidora de Peças. Todos os direitos reservados.
             <br />
-            Aguileira Distribuidora Ltda. CNPJ: 37.525.771/0001-02
+            Aguilera Auto Peças de Goiás Ltda. CNPJ: 12.145.475/0001-55
           </p>
         </div>
       </div>
