@@ -27,13 +27,14 @@ const categories = [
 
 export function ProductsGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-4">
+    <section className="mx-auto w-full max-w-screen-2xl px-4 py-6 lg:px-8">
       <h1 className="sr-only">Produtos Castrillon Autopeças</h1>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {categories.map(({ title, href, Icon }) => (
           <article
+
             key={title}
-            className="flex flex-col items-center rounded-md border border-gray-200 bg-white p-4 sm:p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            className="mx-auto flex h-full w-full max-w-[380px] flex-col items-center rounded-xl border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
             <Link
               href={href}
