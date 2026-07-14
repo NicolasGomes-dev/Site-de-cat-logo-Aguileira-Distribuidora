@@ -5,14 +5,14 @@ export function HeroSection() {
   return (
     <>
       {/* Banner */}
-      <div className="mx-auto mb-10 w-full max-w-[700px] px-6">
+      <div className="mx-auto mb-10 flex justify-center">
         <Image
           src="/hero-home.png"
           alt="Banner Aguilera"
-          width={1920}
-          height={700}
+          width={550}
+          height={200}
           priority
-          className="h-auto w-full rounded-xl object-cover shadow-xl"
+          className="rounded-xl shadow-xl"
         />
       </div>
 
