@@ -20,7 +20,8 @@
     "plugins": [
       {
         "name": "next"
-      }
+      } 
+
     ],
     "paths": {
       "@/*": [
