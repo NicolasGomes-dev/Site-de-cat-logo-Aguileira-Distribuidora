@@ -152,7 +152,7 @@ export function SiteHeader() {
 
               <li className="pt-4">
                 <Link
-                  href="https://wa.me/556295128248?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Aguilera%20Autope%C3%A7as%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                  href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white"
