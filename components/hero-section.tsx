@@ -4,23 +4,13 @@ import Image from "next/image"
 export function HeroSection() {
   return (
     <>
-      {/* Banner */}
-      <div className="mx-auto mb-10 flex justify-center">
-        <Image
-          src="/hero-home.png"
-          alt="Banner Aguilera"
-          width={550}
-          height={200}
-          priority
-          className="rounded-xl shadow-xl"
-        />
-      </div>
 
       {/* Hero */}
       <section className="bg-slate-50">
         <div className="mx-auto flex max-w-screen-2xl flex-col items-center gap-12 px-6 py-16 lg:flex-row lg:px-8 lg:py-24">
+
           {/* Texto */}
-          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+          <div className="flex-1">
             <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
               Há mais de 30 anos no mercado
             </span>
@@ -46,12 +36,26 @@ export function HeroSection() {
               <Link
                 href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
                 target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md border-2 border-navy px-8 py-4 text-center font-semibold text-navy transition hover:bg-navy hover:text-white"
               >
                 Fale conosco
               </Link>
             </div>
           </div>
+
+          {/* Imagem */}
+          <div className="flex-1 flex justify-center">
+            <Image
+              src="/hero-home.png"
+              alt="Aguilera Distribuidora"
+              width={650}
+              height={700}
+              priority
+              className="w-full max-w-[600px] rounded-3xl object-cover shadow-2xl"
+            />
+          </div>
+
         </div>
       </section>
     </>

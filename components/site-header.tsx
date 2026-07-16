@@ -12,7 +12,7 @@ import {
 } from "@/components/social-icons"
 
 const navItems = [
-  { label: "HOME", href: "#" },
+  { label: "HOME", href: "/" },
   { label: "AGUILEIRA", href: "#" },
   { label: "LOJAS", href: "#" },
   { label: "FABRICANTES", href: "#" },

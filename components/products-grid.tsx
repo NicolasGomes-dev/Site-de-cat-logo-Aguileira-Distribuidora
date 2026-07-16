@@ -28,7 +28,24 @@ const categories = [
 export function ProductsGrid() {
   return (
     <section className="mx-auto w-full max-w-screen-2xl px-4 py-6 lg:px-8">
-      <h1 className="sr-only">Produtos Castrillon Autopeças</h1>
+      <h1 className="sr-only">Produtos Aguilera Autopeças</h1>
+
+      <div className="mb-14 text-center">
+        <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
+          Nossas Linhas
+        </span>
+
+        <h2 className="mt-5 text-4xl font-bold text-navy lg:text-5xl">
+          Encontre a linha ideal para o seu veículo
+        </h2>
+
+        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          Trabalhamos com peças para Linha Agrícola, Linha Leve e Utilitários,
+          Linha Pesada e Extra Pesada, oferecendo produtos das melhores marcas
+          do mercado.
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {categories.map(({ title, href, Icon }) => (
           <article
