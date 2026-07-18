@@ -15,9 +15,12 @@ const navItems = [
   { label: "HOME", href: "/" },
   { label: "AGUILEIRA", href: "#" },
   { label: "LOJAS", href: "#" },
-  { label: "FABRICANTES", href: "#" },
-  { label: "NOVIDADES", href: "#" },
-  { label: "TRABALHE CONOSCO", href: "#" },
+  { label: "FABRICANTES", href: "/#fabricantes" },
+  /*{ label: "NOVIDADES", href: "#" },*/
+  {
+    label: "TRABALHE CONOSCO",
+    href: "https://wa.me/556295128248?text=Olá!%20Vim%20pelo%20site%20da%20Aguilera%20Distribuidora.%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20e%20gostaria%20de%20saber%20se%20há%20oportunidades%20disponíveis.%20Agradeço%20pela%20atenção!",
+  },
 ]
 
 const socials = [

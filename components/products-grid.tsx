@@ -27,8 +27,10 @@ const categories = [
 
 export function ProductsGrid() {
   return (
-    <section className="mx-auto w-full max-w-screen-2xl px-4 py-6 lg:px-8">
-      <h1 className="sr-only">Produtos Aguilera Autopeças</h1>
+    <section
+      id="fabricantes"
+      className="mx-auto w-full max-w-screen-2xl px-4 py-6 lg:px-8"
+    >      <h1 className="sr-only">Produtos Aguilera Autopeças</h1>
 
       <div className="mb-14 text-center">
         <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">

@@ -27,7 +27,7 @@ export function HeroSection() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="#produtos"
+                href="#fabricantes"
                 className="rounded-md bg-brand-red px-8 py-4 text-center font-semibold text-white transition hover:bg-red-700"
               >
                 Conheça nossos produtos
