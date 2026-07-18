@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import { HeroCarousel } from "./hero-carrossel"
 
 export function HeroSection() {
   return (
@@ -44,16 +44,11 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Imagem */}
+          {/* Carrossel */}
           <div className="flex-1 flex justify-center">
-            <Image
-              src="/hero-home.png"
-              alt="Aguilera Distribuidora"
-              width={650}
-              height={700}
-              priority
-              className="w-full max-w-[600px] rounded-3xl object-cover shadow-2xl"
-            />
+            <div className="w-full max-w-[700px]">
+              <HeroCarousel />
+            </div>
           </div>
 
         </div>

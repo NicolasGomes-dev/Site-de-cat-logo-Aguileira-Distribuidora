@@ -36,7 +36,7 @@ export function ProductsGrid() {
         </span>
 
         <h2 className="mt-5 text-4xl font-bold text-navy lg:text-5xl">
-          Encontre a linha ideal para o seu veículo
+          Conheça nossos principais fabricantes
         </h2>
 
         <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
