@@ -1,34 +1,84 @@
+import Image from "next/image"
 import Link from "next/link"
+import { Package, Truck, ShieldCheck, Users } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section
-      id="aguilera"
-      className="bg-white py-20"
-    >
-      <div className="mx-auto max-w-screen-xl px-6 text-center">
+    <section id="sobre" className="bg-white py-24">
+      <div className="mx-auto flex max-w-screen-2xl items-center gap-16 px-6">
 
-        <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
-          Quem Somos
-        </span>
+        {/* Imagem */}
+        <div className="w-1/2">
+          <Image
+            src="/about-aguilera.jpg"
+            alt="Aguilera Distribuidora"
+            width={900}
+            height={700}
+            className="rounded-3xl shadow-xl"
+          />
+        </div>
 
-        <h2 className="mt-6 text-5xl font-bold text-navy">
-          Conheça a Aguilera Distribuidora
-        </h2>
+        {/* Conteúdo */}
+        <div className="w-1/2">
 
-        <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-600">
-          Há mais de 30 anos oferecendo qualidade, confiança e um dos maiores
-          estoques de autopeças do Brasil. Trabalhamos com as principais marcas
-          do mercado para atender as linhas Agrícola, Leve, Pesada e Extra Pesada.
-        </p>
+          <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
+            QUEM SOMOS
+          </span>
 
-        <div className="mt-12">
+          <h2 className="mt-6 text-5xl font-bold text-navy">
+            Mais de 30 anos distribuindo confiança.
+          </h2>
+
+          <p className="mt-8 text-xl leading-9 text-slate-600">
+            A Aguilera Distribuidora atua há mais de três décadas oferecendo
+            peças para Linha Agrícola, Linha Leve, Linha Pesada e Extra Pesada,
+            trabalhando apenas com fabricantes reconhecidos e atendimento
+            especializado.
+          </p>
+
+          <div className="mt-10 grid grid-cols-2 gap-6">
+
+            <div className="flex items-center gap-4">
+              <Package className="text-brand-red" />
+              <div>
+                <h3 className="font-bold text-navy">+1 milhão</h3>
+                <p className="text-slate-500">Peças em estoque</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Truck className="text-brand-red" />
+              <div>
+                <h3 className="font-bold text-navy">Todo Brasil</h3>
+                <p className="text-slate-500">Entrega rápida</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <ShieldCheck className="text-brand-red" />
+              <div>
+                <h3 className="font-bold text-navy">Marcas Originais</h3>
+                <p className="text-slate-500">Qualidade garantida</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Users className="text-brand-red" />
+              <div>
+                <h3 className="font-bold text-navy">Especialistas</h3>
+                <p className="text-slate-500">Equipe preparada</p>
+              </div>
+            </div>
+
+          </div>
+
           <Link
             href="/aguilera"
-            className="rounded-lg bg-brand-red px-10 py-4 text-lg font-semibold text-white transition hover:bg-red-700"
+            className="mt-10 inline-flex rounded-lg bg-brand-red px-8 py-4 font-semibold text-white transition hover:bg-red-700"
           >
-            Conheça a Aguilera
+            Conheça nossa história
           </Link>
+
         </div>
 
       </div>
