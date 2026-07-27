@@ -1,11 +1,15 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Package, Truck, ShieldCheck, Users } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Package, Truck, ShieldCheck, Users } from "lucide-react";
+import { AboutVideo } from "./about-video";
 
 export function AboutSection() {
   return (
     <section id="sobre" className="bg-white py-24">
+
+      {/* QUEM SOMOS */}
       <div className="mx-auto flex flex-col-reverse lg:flex-row max-w-screen-2xl items-center gap-10 lg:gap-16 px-6">
+
         {/* Imagem */}
         <div className="w-full lg:w-1/2">
           <Image
@@ -13,11 +17,13 @@ export function AboutSection() {
             alt="Aguilera Distribuidora"
             width={900}
             height={700}
-            className="w-full h-auto rounded-3xl shadow-xl object-cover" />
+            className="w-full h-auto rounded-3xl shadow-xl object-cover"
+          />
         </div>
 
         {/* Conteúdo */}
         <div className="w-full lg:w-1/2">
+
           <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
             QUEM SOMOS
           </span>
@@ -79,6 +85,12 @@ export function AboutSection() {
         </div>
 
       </div>
+
+      {/* VÍDEO INSTITUCIONAL */}
+      <div className="mt-24">
+        <AboutVideo />
+      </div>
+
     </section>
-  )
+  );
 }
