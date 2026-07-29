@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Package, Truck, ShieldCheck, Users } from "lucide-react";
 import { AboutVideo } from "./about-video";
+import { CompanyShowcase } from "./company-showcase";
 
 export function AboutSection() {
   return (
@@ -91,6 +92,9 @@ export function AboutSection() {
         <AboutVideo />
       </div>
 
+      {/* NOSSA ESTRUTURA */}
+      <CompanyShowcase />
+
     </section>
-  );
+  );    
 }
