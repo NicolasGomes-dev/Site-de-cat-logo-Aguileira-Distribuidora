@@ -1,13 +1,10 @@
 import Image from "next/image";
 
 const images = [
-  "/images/gallery/gallery-01.jpg",
-  "/images/gallery/gallery-02.jpg",
-  "/images/gallery/gallery-03.jpg",
-  "/images/gallery/gallery-04.jpg",
-  "/images/gallery/gallery-05.jpg",
-];
-
+  "/images/gallery/estoque-01.jpeg",
+  "/images/gallery/estoque-02.jpeg",
+  "/images/gallery/estoque-03.jpeg",
+]
 export function StockGallery() {
   return (
     <section className="mt-24">
