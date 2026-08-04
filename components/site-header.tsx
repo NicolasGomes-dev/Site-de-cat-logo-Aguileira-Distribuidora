@@ -13,10 +13,9 @@ import {
 
 const navItems = [
   { label: "HOME", href: "/" },
-  { label: "AGUILEIRA", href: "#" },
-  { label: "LOJAS", href: "#" },
+  { label: "AGUILERA", href: "/aguilera" },
+  { label: "LOJAS", href: "/#lojas" },
   { label: "FABRICANTES", href: "/#fabricantes" },
-  /*{ label: "NOVIDADES", href: "#" },*/
   {
     label: "TRABALHE CONOSCO",
     href: "https://wa.me/556295128248?text=Olá!%20Vim%20pelo%20site%20da%20Aguilera%20Distribuidora.%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20e%20gostaria%20de%20saber%20se%20há%20oportunidades%20disponíveis.%20Agradeço%20pela%20atenção!",
@@ -48,15 +47,25 @@ export function SiteHeader() {
     <header className="fixed top-0 left-0 z-50 w-full">
       {/* Barra superior */}
       <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+
+          {/* Telefone */}
+          <div className="hidden lg:flex items-center gap-2 text-sm font-medium whitespace-nowrap">
+            <span>📞</span>
+            <span>(65) 2018 3300</span>
+          </div>
+
+          {/* Portal do Cliente */}
           <Link
             href="https://castrillon.portaldocliente.online/"
-            className="text-center text-xs font-medium leading-relaxed transition-colors hover:text-brand-red sm:text-left sm:text-sm"
+            target="_blank"
+            className="text-center text-xs font-medium leading-relaxed transition-colors hover:text-brand-red sm:text-sm"
           >
             Acesse o Portal do Cliente para Segunda Via de Boletos e NFe.
           </Link>
 
-          <ul className="flex items-center justify-center gap-2 sm:justify-end">
+          {/* Redes sociais */}
+          <ul className="flex items-center gap-2">
             {socials.map(({ label, href, Icon }) => (
               <li key={label}>
                 <Link
@@ -69,6 +78,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+
         </div>
       </div>
 

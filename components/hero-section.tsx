@@ -5,30 +5,35 @@ import { HeroCarousel } from "./hero-carrossel"
 export function HeroSection() {
   return (
     <section className="bg-slate-100">
-
       {/* Conteúdo Principal */}
-      <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-10 px-6 py-12 lg:flex-row lg:items-start lg:gap-16 lg:py-20">
+      <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-12 px-6 py-16 lg:flex-row lg:items-center lg:gap-20 lg:py-24">
         {/* Texto */}
         <div className="w-full lg:w-[40%]">
-          <span className="rounded-full bg-brand-red/10 px-4 py-2 text-sm font-semibold text-brand-red">
-            Há mais de 30 anos no mercado
-          </span>
 
-          <h1 className="mt-6 text-6xl font-bold leading-tight text-navy">
-            Distribuindo qualidade para quem move o Brasil.
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-brand-red">
+            PEÇAS • AGRÍCOLA • LEVE • PESADA
+          </p>
+
+          <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-navy lg:text-7xl">
+            Distribuindo
+            <br />
+            qualidade
+            <br />
+            para quem move o
+            <br />
+            Brasil.
           </h1>
 
-          <p className="mt-8 text-xl leading-9 text-slate-600">
+          <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 lg:text-xl">
             A Aguilera Distribuidora oferece peças para Linha Agrícola,
             Linha Leve e Linha Pesada, trabalhando com as melhores marcas
             do mercado e atendimento especializado.
           </p>
 
-          <div className="mt-10 flex gap-4">
-
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="#fabricantes"
-              className="rounded-md bg-brand-red px-8 py-4 font-semibold text-white transition hover:bg-red-700"
+              className="rounded-md bg-brand-red px-8 py-4 text-center font-semibold text-white transition hover:bg-red-700"
             >
               Conheça nossos produtos
             </Link>
@@ -36,20 +41,17 @@ export function HeroSection() {
             <Link
               href="https://wa.me/556295128248"
               target="_blank"
-              className="rounded-md border-2 border-navy px-8 py-4 font-semibold text-navy transition hover:bg-navy hover:text-white"
+              className="rounded-md border-2 border-navy px-8 py-4 text-center font-semibold text-navy transition hover:bg-navy hover:text-white"
             >
               Fale conosco
             </Link>
-
           </div>
-
         </div>
 
         {/* Banner */}
         <div className="w-full lg:w-[60%]">
           <HeroCarousel />
         </div>
-
       </div>
 
       {/* Carrossel dos fabricantes */}
@@ -58,7 +60,6 @@ export function HeroSection() {
           <ManufacturersMarquee />
         </div>
       </div>
-
     </section>
   )
 }
