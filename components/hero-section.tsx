@@ -1,27 +1,25 @@
-import Link from "next/link"
-import { ManufacturersMarquee } from "./manufacturers-marquee"
-import { HeroCarousel } from "./hero-carrossel"
+import Link from "next/link";
+import { ManufacturersMarquee } from "./manufacturers-marquee";
+import { HeroCarousel } from "./hero-carrossel";
 
 export function HeroSection() {
   return (
     <section className="bg-slate-100">
       {/* Conteúdo Principal */}
-      <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-12 px-6 py-16 lg:flex-row lg:items-center lg:gap-20 lg:py-24">
-        {/* Texto */}
-        <div className="w-full lg:w-[40%]">
+      <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-16 px-6 py-8 lg:flex-row lg:gap-20 lg:py-10">
 
+        {/* Texto */}
+        <div className="w-full lg:w-[48%]">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-brand-red">
             PEÇAS • AGRÍCOLA • LEVE • PESADA
           </p>
 
-          <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-navy lg:text-7xl">
+          <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-navy lg:text-6xl">
             Distribuindo
             <br />
-            qualidade
+            qualidade para
             <br />
-            para quem move o
-            <br />
-            Brasil.
+            quem move o Brasil.
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 lg:text-xl">
@@ -49,17 +47,18 @@ export function HeroSection() {
         </div>
 
         {/* Banner */}
-        <div className="w-full lg:w-[60%]">
+        <div className="w-full lg:w-[52%]">
           <HeroCarousel />
         </div>
+
       </div>
 
-      {/* Carrossel dos fabricantes */}
+      {/* Fabricantes */}
       <div className="w-full bg-white py-8">
         <div className="mx-auto max-w-screen-2xl px-6">
           <ManufacturersMarquee />
         </div>
       </div>
     </section>
-  )
+  );
 }

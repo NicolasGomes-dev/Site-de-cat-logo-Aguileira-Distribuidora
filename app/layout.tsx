@@ -22,7 +22,7 @@ const barlow = Barlow({
 export const metadata: Metadata = {
   title: "Aguilera Distribuidora de Peças – mais de 1 milhão de peças em estoque",
   description:
-    "Linha Agrícola, Leve e Utilitários, Pesada e Extra Pesada. Mais de 1 milhão de peças em estoque na Castrillon Autopeças.",
+    "Linha Agrícola, Leve e Utilitários, Pesada e Extra Pesada. Mais de 1 milhão de peças em estoque.",
   generator: "v0.app",
 
   icons: {
@@ -51,13 +51,12 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <SiteHeader />
 
-        {/* Espaço para o header fixo */}
-        <main className="pt-40">
+        {/* Espaço reservado para o header fixo */}
+        <main className="pt-0">
           {children}
         </main>
 
         <SiteFooter />
-
         <WhatsAppButton />
 
         {process.env.NODE_ENV === "production" && <Analytics />}

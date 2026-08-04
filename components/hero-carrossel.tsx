@@ -1,19 +1,20 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import useEmblaCarousel from "embla-carousel-react"
-import Autoplay from "embla-carousel-autoplay"
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const banners = [
   "/hero-home.png",
   "/hero-home2.png",
   "/hero-home3.png",
-]
+];
 
 export function HeroCarousel() {
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
+      align: "start",
     },
     [
       Autoplay({
@@ -21,30 +22,27 @@ export function HeroCarousel() {
         stopOnInteraction: false,
       }),
     ]
-  )
+  );
 
   return (
     <div
       ref={emblaRef}
-      className="overflow-hidden rounded-3xl shadow-xl"
+      className="overflow-hidden rounded-[28px] shadow-2xl"
     >
       <div className="flex">
         {banners.map((banner, index) => (
-          <div
-            key={index}
-            className="min-w-full"
-          >
+          <div key={index} className="relative min-w-full aspect-[1842/854]">
             <Image
               src={banner}
               alt={`Banner ${index + 1}`}
-              width={1842}
-              height={854}
+              fill
               priority={index === 0}
-              className="w-full h-auto"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover"
             />
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
