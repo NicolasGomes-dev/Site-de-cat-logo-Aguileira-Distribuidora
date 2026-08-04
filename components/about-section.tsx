@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Package,
   Truck,
   ShieldCheck,
   Users,
-  ArrowRight,
+  ArrowLeft,
 } from "lucide-react";
 
 import { AboutVideo } from "./about-video";
@@ -14,128 +13,175 @@ import { CompanyShowcase } from "./company-showcase";
 export function AboutSection() {
   return (
     <section
-      id="aguilera"
-      className="bg-slate-50 py-20 scroll-mt-32"
+      id="conheca-aguilera"
+      className="bg-slate-50 pt-12 pb-20 scroll-mt-28"
     >
-      <div className="mx-auto max-w-screen-2xl px-6">
 
-        <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_.8fr]">
+      <div className="mx-auto max-w-5xl px-6">
 
-          {/* IMAGEM */}
+        {/* BOTÃO VOLTAR */}
+        <div className="mb-10">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-brand-red px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-red-700"
+          >
+            <ArrowLeft className="h-5 w-5" />
+            Voltar
+          </Link>
+        </div>
+
+        {/* BADGE */}
+        <div className="mb-6">
+          <span className="inline-flex rounded-full bg-brand-red/10 px-5 py-2 text-sm font-semibold tracking-wide text-brand-red">
+            NOSSA HISTÓRIA
+          </span>
+        </div>
+
+        {/* TÍTULO */}
+        <h2 className="max-w-4xl text-4xl font-extrabold leading-tight text-navy lg:text-5xl">
+          Uma história construída com trabalho, confiança e resultados.
+        </h2>
+
+        {/* TEXTO */}
+        <div className="mt-8 max-w-4xl space-y-6 text-lg leading-9 text-slate-600">
+
+          <p>
+            A Aguilera Distribuidora de Auto Peças é mais do que uma empresa —
+            é a prova viva de que trabalho consistente constrói grandes
+            histórias.
+          </p>
+
+          <p>
+            Em um setor competitivo e em constante transformação, a Aguilera
+            se destaca pela sua força operacional, pela parceria sólida com
+            fornecedores e pela dedicação em atender cada cliente com
+            excelência. Cada peça entregue carrega não apenas qualidade, mas
+            também o esforço de uma equipe que acredita que resultados são
+            conquistados com disciplina, foco e atitude.
+          </p>
+
+          <p>
+            O futuro é promissor — e não por acaso. Ele está sendo
+            construído agora, com dedicação, estratégia e visão.
+            A Aguilera Distribuidora de Auto Peças nasceu de uma empresa com
+            mais de <strong>45 anos de história</strong> e seguirá firme,
+            acelerando rumo a novos horizontes, consolidando sua marca e
+            mostrando que, quando há trabalho de verdade, o sucesso é apenas
+            uma consequência.
+          </p>
+
+        </div>
+
+        {/* TIMELINE */}
+        <div className="mt-20">
+
+          <h3 className="mb-12 text-center text-3xl font-bold text-navy">
+            Nossa trajetória
+          </h3>
+
           <div className="relative">
 
-            <Image
-              src="/about-aguilera.jpg"
-              alt="Aguilera Distribuidora"
-              width={900}
-              height={700}
-              className="w-full rounded-3xl object-cover shadow-2xl transition duration-500 hover:scale-[1.02]"
-            />
+            <div className="absolute left-0 top-6 h-1 w-full rounded-full bg-slate-200" />
 
-            <div className="absolute bottom-8 right-8 hidden rounded-3xl bg-white px-8 py-6 shadow-2xl lg:block">
+            <div className="relative grid grid-cols-3 gap-8">
 
-              <h3 className="text-5xl font-black text-brand-red">
-                30+
-              </h3>
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-red text-white font-bold">
+                  1
+                </div>
 
-              <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-navy">
-                Anos de tradição
-              </p>
+                <h4 className="text-xl font-bold text-navy">
+                  Fundação
+                </h4>
+
+                <p className="mt-2 text-slate-600">
+                  Início de uma história construída com dedicação e trabalho.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-red text-white font-bold">
+                  2
+                </div>
+
+                <h4 className="text-xl font-bold text-navy">
+                  Expansão
+                </h4>
+
+                <p className="mt-2 text-slate-600">
+                  Crescimento da operação e fortalecimento das parcerias.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-red text-white font-bold">
+                  3
+                </div>
+
+                <h4 className="text-xl font-bold text-navy">
+                  Hoje
+                </h4>
+
+                <p className="mt-2 text-slate-600">
+                  Mais de 45 anos levando qualidade para milhares de clientes.
+                </p>
+              </div>
 
             </div>
 
           </div>
 
-          {/* CONTEÚDO */}
-          <div className="max-w-[580px]">
+        </div>
 
-            <span className="inline-flex rounded-full bg-brand-red/10 px-5 py-2 text-sm font-semibold tracking-wide text-brand-red">
-              QUEM SOMOS
-            </span>
+        {/* CARDS */}
+        <div className="mt-20 grid gap-6 sm:grid-cols-2">
 
-            <h2 className="mt-6 text-4xl font-extrabold leading-tight text-navy lg:text-6xl">
-              Há mais de 30 anos impulsionando o mercado brasileiro de autopeças.
-            </h2>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <Package className="mb-3 h-8 w-8 text-brand-red" />
 
-            <p className="mt-7 text-lg leading-9 text-slate-600">
-              Há mais de três décadas, a Aguilera Distribuidora conecta fabricantes
-              e clientes com eficiência, qualidade e confiança. Atuamos nos
-              segmentos Agrícola, Linha Leve, Linha Pesada e Extra Pesada,
-              oferecendo um amplo portfólio de produtos das principais marcas
-              do mercado, logística ágil e atendimento especializado.
+            <h3 className="text-xl font-bold text-navy">
+              +1 Milhão
+            </h3>
+
+            <p className="mt-2 text-sm leading-7 text-slate-500">
+              Peças disponíveis em estoque.
             </p>
+          </div>
 
-            {/* CARDS */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <Truck className="mb-3 h-8 w-8 text-brand-red" />
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
+            <h3 className="text-xl font-bold text-navy">
+              5 Estados
+            </h3>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <p className="mt-2 text-sm leading-7 text-slate-500">
+              Goiás, Mato Grosso, Tocantins, Pará e Piauí.
+            </p>
+          </div>
 
-                <Package className="mb-3 h-8 w-8 text-brand-red" />
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <ShieldCheck className="mb-3 h-8 w-8 text-brand-red" />
 
-                <h3 className="text-xl font-bold text-navy">
-                  +1 milhão
-                </h3>
+            <h3 className="text-xl font-bold text-navy">
+              Marcas Originais
+            </h3>
 
-                <p className="mt-2 text-sm leading-7 text-slate-500">
-                  Peças disponíveis em estoque.
-                </p>
+            <p className="mt-2 text-sm leading-7 text-slate-500">
+              Produtos das principais fabricantes do mercado.
+            </p>
+          </div>
 
-              </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <Users className="mb-3 h-8 w-8 text-brand-red" />
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="text-xl font-bold text-navy">
+              Atendimento Especializado
+            </h3>
 
-                <Truck className="mb-3 h-8 w-8 text-brand-red" />
-
-                <h3 className="text-xl font-bold text-navy">
-                  5 Estados
-                </h3>
-
-                <p className="mt-2 text-sm leading-7 text-slate-500">
-                  Goiás, Mato Grosso, Tocantins, Pará e Piauí.
-                </p>
-
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-
-                <ShieldCheck className="mb-3 h-8 w-8 text-brand-red" />
-
-                <h3 className="text-xl font-bold text-navy">
-                  Marcas Originais
-                </h3>
-
-                <p className="mt-2 text-sm leading-7 text-slate-500">
-                  Produtos das principais fabricantes do mercado.
-                </p>
-
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-
-                <Users className="mb-3 h-8 w-8 text-brand-red" />
-
-                <h3 className="text-xl font-bold text-navy">
-                  Atendimento Especializado
-                </h3>
-
-                <p className="mt-2 text-sm leading-7 text-slate-500">
-                  Equipe preparada para atender empresas e revendedores.
-                </p>
-
-              </div>
-
-            </div>
-
-            <Link
-              href="/aguilera"
-              className="mt-10 inline-flex items-center gap-2 rounded-xl bg-brand-red px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-red-700"
-            >
-              Conheça nossa história
-
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-
+            <p className="mt-2 text-sm leading-7 text-slate-500">
+              Equipe preparada para atender empresas e revendedores.
+            </p>
           </div>
 
         </div>
