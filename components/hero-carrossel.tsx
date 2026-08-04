@@ -6,7 +6,6 @@ import Autoplay from "embla-carousel-autoplay";
 
 const banners = [
   "/hero-home.png",
-  "/hero-home2.png",
   "/hero-home3.png",
 ];
 
