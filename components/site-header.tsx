@@ -14,7 +14,7 @@ import {
 const navItems = [
   { label: "HOME", href: "/" },
   { label: "AGUILERA", href: "/aguilera" },
-  { label: "LOJAS", href: "/#lojas" },
+  { label: "LOJAS", href: "/lojas" },
   { label: "FABRICANTES", href: "/#fabricantes" },
   {
     label: "TRABALHE CONOSCO",

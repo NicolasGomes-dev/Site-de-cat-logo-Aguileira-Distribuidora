@@ -1,19 +1,14 @@
+import { StoresMap } from "./stores-map"
+
 export function StoresSection() {
   return (
-    <section
-      id="lojas"
-      className="bg-white py-24"
-    >
-      <div className="mx-auto max-w-screen-2xl px-6">
+    <section className="bg-white py-24">
+      <div className="container mx-auto px-6">
 
-        <div className="grid gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
 
           {/* MAPA */}
-          <div className="flex items-center justify-center rounded-3xl border border-slate-200 bg-slate-50 p-10">
-            <h3 className="text-2xl font-bold text-slate-400">
-              MAPA DO BRASIL
-            </h3>
-          </div>
+          <StoresMap />
 
           {/* CONTEÚDO */}
           <div>
@@ -27,10 +22,61 @@ export function StoresSection() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
-              A Aguilera possui unidades estrategicamente localizadas para
-              garantir atendimento rápido, logística eficiente e disponibilidade
-              de peças para nossos clientes.
+              A Aguilera possui presença estratégica nos principais polos do
+              agronegócio brasileiro, garantindo atendimento ágil, logística
+              eficiente e ampla disponibilidade de peças para seus clientes.
             </p>
+
+            {/* DIFERENCIAIS */}
+            <div className="mt-8 space-y-4">
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-red/10">
+                  <span className="text-sm font-bold text-brand-red">
+                    ✓
+                  </span>
+                </div>
+
+                <span className="text-slate-700">
+                  Presença em 5 estados brasileiros
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-red/10">
+                  <span className="text-sm font-bold text-brand-red">
+                    ✓
+                  </span>
+                </div>
+
+                <span className="text-slate-700">
+                  Logística eficiente para o agronegócio
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-red/10">
+                  <span className="text-sm font-bold text-brand-red">
+                    ✓
+                  </span>
+                </div>
+
+                <span className="text-slate-700">
+                  Atendimento especializado em peças
+                </span>
+              </div>
+
+            </div>
+
+            {/* BOTÃO */}
+            <a
+              href="https://wa.me/556295128248"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center rounded-xl bg-brand-red px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              Solicitar orçamento
+            </a>
 
           </div>
 
@@ -38,5 +84,5 @@ export function StoresSection() {
 
       </div>
     </section>
-  );
+  )
 }
