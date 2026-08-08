@@ -1,24 +1,18 @@
 "use client"
 
-import { useState } from "react"
-
-import { stores } from "@/lib/stores"
-
 import { StoresMap } from "./stores-map"
 import { StoresList } from "./stores-list"
-import { SelectedStoreCard } from "./selected-store-card"
 
 export function StoresSection() {
-  const [selectedStore, setSelectedStore] = useState(stores[0])
-
   return (
     <section
       id="lojas"
-      className="bg-white py-20"
+      className="bg-white py-24"
     >
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-6">
 
-        <div className="mb-12 text-center">
+        {/* Cabeçalho */}
+        <div className="mb-14 text-center">
           <span className="inline-flex rounded-full bg-brand-red/10 px-5 py-2 text-sm font-semibold tracking-wide text-brand-red">
             NOSSAS LOJAS
           </span>
@@ -27,29 +21,20 @@ export function StoresSection() {
             Estamos presentes nas principais regiões do Brasil.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
             Uma rede de distribuição preparada para entregar autopeças com rapidez, eficiência e confiança.
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        {/* Mapa + Lista */}
+        <div className="grid items-start gap-16 lg:grid-cols-[520px_1fr]">
 
           {/* MAPA */}
-          <StoresMap
-            selectedStore={selectedStore}
-            onSelectStore={setSelectedStore}
-          />
+          <StoresMap />
 
-          {/* LOJA SELECIONADA */}
-          <SelectedStoreCard
-            store={selectedStore}
-          />
-
-        </div>
-
-        {/* TODAS AS LOJAS */}
-        <div className="mt-16">
+          {/* TODAS AS LOJAS */}
           <StoresList />
+
         </div>
 
       </div>

@@ -3,26 +3,26 @@ import { stores } from "@/lib/stores"
 
 export function StoresList() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-16">
       {stores.map((state) => (
-        <div key={state.id}>
-          {/* Nome do Estado */}
-          <div className="mb-5 flex items-center gap-3">
-            <MapPin className="h-6 w-6 fill-brand-red text-brand-red" />
+        <section
+          key={state.id}
+          id={state.uf}
+          className="scroll-mt-32"
+        >
+          {/* Cabeçalho do Estado */}
+          <div className="mb-6 border-b border-slate-200 pb-4">
+            <h2 className="text-3xl font-bold text-navy transition-all duration-300">
+              {state.name}
+            </h2>
 
-            <div>
-              <h2 className="text-2xl font-bold text-navy">
-                {state.name}
-              </h2>
-
-              <p className="text-sm text-slate-500">
-                {state.stores.length} unidade
-                {state.stores.length > 1 ? "s" : ""}
-              </p>
-            </div>
+            <p className="mt-1 text-sm text-slate-500">
+              {state.stores.length}{" "}
+              {state.stores.length === 1 ? "unidade" : "unidades"}
+            </p>
           </div>
 
-          {/* Lista das lojas */}
+          {/* Lista de lojas */}
           <div className="grid gap-6 md:grid-cols-2">
             {state.stores.map((store) => (
               <div
@@ -31,12 +31,12 @@ export function StoresList() {
               >
                 {/* Cabeçalho */}
                 <div>
-                  <h3 className="text-lg font-bold text-navy">
+                  <h3 className="text-xl font-bold text-navy">
                     {store.city}
                   </h3>
 
                   <p className="text-sm text-slate-500">
-                    {state.uf}
+                    {store.type}
                   </p>
                 </div>
 
@@ -47,8 +47,8 @@ export function StoresList() {
                     <span>{store.type}</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <MapPinned className="h-4 w-4 text-brand-red" />
+                  <div className="flex items-start gap-2">
+                    <MapPinned className="mt-1 h-4 w-4 shrink-0 text-brand-red" />
                     <span>{store.address}</span>
                   </div>
 
@@ -63,14 +63,15 @@ export function StoresList() {
                   href={store.maps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center rounded-lg bg-brand-red px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-brand-red px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
                 >
+                  <MapPin className="h-4 w-4" />
                   Ver no Google Maps
                 </a>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       ))}
     </div>
   )

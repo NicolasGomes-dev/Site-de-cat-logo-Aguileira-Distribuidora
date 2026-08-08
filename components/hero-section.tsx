@@ -4,7 +4,7 @@ import { HeroCarousel } from "./hero-carrossel";
 
 export function HeroSection() {
   return (
-    <section className="bg-slate-100">
+    <section className="bg-white">
       {/* Conteúdo Principal */}
       <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-16 px-6 py-8 lg:flex-row lg:gap-20 lg:py-10">
 

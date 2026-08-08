@@ -44,10 +44,11 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="top-0 left-0 z-50 w-full">
+    <header className="sticky top-0 z-50">
+
       {/* Barra superior */}
       <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
 
           {/* Telefone */}
           <div className="hidden lg:flex items-center gap-2 text-sm font-medium whitespace-nowrap">
@@ -83,8 +84,8 @@ export function SiteHeader() {
       </div>
 
       {/* Header */}
-      <div className="border-b border-border bg-white shadow-md">
-        <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-4 py-4">
+      <div className="border-b border-slate-200 bg-white shadow-md">
+        <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-5">
 
           {/* Logo */}
           <div className="justify-self-start">
@@ -94,12 +95,12 @@ export function SiteHeader() {
           {/* Menu Desktop */}
           <div className="hidden justify-self-center lg:block">
             <nav aria-label="Menu principal">
-              <ul className="flex items-center gap-4 font-heading text-sm font-medium tracking-wide text-navy">
+              <ul className="flex items-center gap-8 font-heading text-[15px] font-semibold uppercase tracking-wide text-navy">
                 {navItems.map((item) => (
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="whitespace-nowrap transition-colors hover:text-brand-red"
+                      className="relative transition-colors duration-300 hover:text-brand-red after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-brand-red after:transition-all hover:after:w-full"
                     >
                       {item.label}
                     </Link>
@@ -110,20 +111,18 @@ export function SiteHeader() {
           </div>
 
           {/* Direita */}
-          <div className="justify-self-end flex items-center gap-3">
+          <div className="flex items-center justify-self-end gap-3">
 
-            {/* WhatsApp Desktop */}
             <Link
-              href="https://wa.me/556295128248?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Aguilera%20Autope%C3%A7as%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-[#1EBE5D]"
+              className="hidden lg:flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#1EBE5D]"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Fale com a gente
             </Link>
 
-            {/* Botão Mobile */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -145,14 +144,15 @@ export function SiteHeader() {
         {/* Menu Mobile */}
         {open && (
           <nav
-            className="border-t border-border lg:hidden"
+            className="border-t border-slate-200 bg-white lg:hidden"
             aria-label="Menu principal"
           >
             <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2 font-heading text-sm font-medium tracking-wide text-navy">
+
               {navItems.map((item) => (
                 <li
                   key={item.label}
-                  className="border-b border-border last:border-0"
+                  className="border-b border-slate-200 last:border-0"
                 >
                   <Link
                     href={item.href}
@@ -168,16 +168,19 @@ export function SiteHeader() {
                   href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   Fale com a gente
                 </Link>
               </li>
+
             </ul>
           </nav>
         )}
+
       </div>
+
     </header>
   )
 }
