@@ -30,7 +30,7 @@ const socials = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/aguileraatacado/",
+    href: "https://www.instagram.com/aguileradistribuidoradepecas/",
     Icon: InstagramIcon,
   },
   {

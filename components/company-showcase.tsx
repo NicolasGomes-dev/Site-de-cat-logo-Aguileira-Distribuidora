@@ -11,21 +11,6 @@ export function CompanyShowcase() {
           {/* Cabeçalho */}
           <div className="mx-auto mb-16 max-w-3xl text-center">
 
-            <span className="inline-flex rounded-full bg-brand-red/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-brand-red">
-              Nossa Estrutura
-            </span>
-
-            <h2 className="mt-6 text-4xl font-extrabold text-navy lg:text-5xl">
-              Conheça a Aguilera por dentro
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Nossa estrutura foi planejada para garantir rapidez,
-              organização e segurança em cada pedido.
-              Conheça nosso estoque, logística e a dedicação da nossa equipe
-              em entregar qualidade para todo o Brasil.
-            </p>
-
           </div>
 
           {/* Reels */}
