@@ -9,6 +9,7 @@ import {
 
 import { AboutVideo } from "./about-video";
 import { CompanyShowcase } from "./company-showcase";
+import { StockCarousel } from "@/components/stock-carousel";
 
 export function AboutSection() {
   return (
@@ -70,6 +71,22 @@ export function AboutSection() {
             uma consequência.
           </p>
 
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/#fabricantes"
+              className="inline-flex items-center rounded-lg bg-brand-red px-8 py-4 text-white font-semibold transition-all duration-300 hover:bg-red-700 hover:-translate-y-1"
+            >
+              Conheça nossos fabricantes
+            </Link>
+
+            <Link
+              href="/lojas"
+              className="inline-flex items-center rounded-lg border border-slate-300 px-8 py-4 font-semibold text-navy transition-all duration-300 hover:border-brand-red hover:text-brand-red"
+            >
+              Encontrar uma loja
+            </Link>
+          </div>
+
         </div>
 
         {/* TIMELINE */}
@@ -95,7 +112,7 @@ export function AboutSection() {
                 </h4>
 
                 <p className="mt-2 text-slate-600">
-                  Início de uma história construída com dedicação e trabalho.
+                  O atacado iniciou-se no Mato Grosso a 7 anos atrás.
                 </p>
               </div>
 
@@ -109,7 +126,8 @@ export function AboutSection() {
                 </h4>
 
                 <p className="mt-2 text-slate-600">
-                  Crescimento da operação e fortalecimento das parcerias.
+                  Nosso projeto é expandir para todas as unidades que temos
+                  centro de distribuição no Brasil.
                 </p>
               </div>
 
@@ -123,7 +141,7 @@ export function AboutSection() {
                 </h4>
 
                 <p className="mt-2 text-slate-600">
-                  Mais de 45 anos levando qualidade para milhares de clientes.
+                  E hoje já somos 4 atacados: MT, GO, TO e PA.
                 </p>
               </div>
 
@@ -140,11 +158,11 @@ export function AboutSection() {
             <Package className="mb-3 h-8 w-8 text-brand-red" />
 
             <h3 className="text-xl font-bold text-navy">
-              +1 Milhão
+              Maior estoque do Brasil
             </h3>
 
             <p className="mt-2 text-sm leading-7 text-slate-500">
-              Peças disponíveis em estoque.
+              Temos +40.000 itens em estoque.
             </p>
           </div>
 
