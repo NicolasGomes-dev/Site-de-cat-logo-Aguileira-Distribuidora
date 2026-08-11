@@ -2,14 +2,12 @@
 
 import { StoresMap } from "./stores-map"
 import { StoresList } from "./stores-list"
+import { ComplaintsCard } from "./complaints-card"
 
 export function StoresSection() {
   return (
-    <section
-      id="lojas"
-      className="bg-white py-24"
-    >
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-white py-24">
+      <div className="container mx-auto px-6">
 
         {/* Cabeçalho */}
         <div className="mb-14 text-center">
@@ -22,19 +20,25 @@ export function StoresSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            Uma rede de distribuição preparada para entregar autopeças com rapidez, eficiência e confiança.
+            Uma rede de distribuição preparada para entregar autopeças com rapidez,
+            eficiência e confiança.
           </p>
         </div>
 
         {/* Mapa + Lista */}
         <div className="grid items-start gap-16 lg:grid-cols-[520px_1fr]">
 
-          {/* MAPA */}
+          {/* Mapa */}
           <StoresMap />
 
-          {/* TODAS AS LOJAS */}
+          {/* Lista de Centros de Distribuição */}
           <StoresList />
 
+        </div>
+
+        {/* Canal de Reclamações */}
+        <div className="mt-20">
+          <ComplaintsCard />
         </div>
 
       </div>
