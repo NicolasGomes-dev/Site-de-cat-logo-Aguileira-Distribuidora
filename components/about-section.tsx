@@ -53,23 +53,16 @@ export function AboutSection() {
           </p>
 
           <p>
-            Em um setor competitivo e em constante transformação, a Aguilera
-            se destaca pela sua força operacional, pela parceria sólida com
-            fornecedores e pela dedicação em atender cada cliente com
-            excelência. Cada peça entregue carrega não apenas qualidade, mas
-            também o esforço de uma equipe que acredita que resultados são
-            conquistados com disciplina, foco e atitude.
+            Nascemos de um grande sonho: expandir.
+
+            Somos a Distribuidora Aguilera, fruto da visão de um grupo com mais de <strong>45 anos de tradição</strong> no segmento automotivo: o Grupo Castrillon.
+
+            Em outubro de 2010 inauguramos nosso primeiro atacado. De lá pra cá, não paramos de crescer.
+            Hoje estamos presentes em Tocantins, Goiás e Pará e em breve chegaremos também ao Piauí.
+
+            45 anos de história. 4 estados. E um só propósito: levar qualidade e agilidade para onde você estiver.
           </p>
 
-          <p>
-            O futuro é promissor — e não por acaso. Ele está sendo
-            construído agora, com dedicação, estratégia e visão.
-            A Aguilera Distribuidora de Auto Peças nasceu de uma empresa com
-            mais de <strong>45 anos de história</strong> e seguirá firme,
-            acelerando rumo a novos horizontes, consolidando sua marca e
-            mostrando que, quando há trabalho de verdade, o sucesso é apenas
-            uma consequência.
-          </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link

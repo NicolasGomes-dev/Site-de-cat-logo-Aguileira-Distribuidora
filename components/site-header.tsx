@@ -11,6 +11,12 @@ import {
   WhatsAppIcon,
 } from "@/components/social-icons"
 
+// ==============================
+// LINKS PRINCIPAIS
+// ==============================
+
+const B2B_URL = "https://b2b.castrillon.com.br/portal/login"
+
 const navItems = [
   { label: "HOME", href: "/" },
   { label: "AGUILERA", href: "/aguilera" },
@@ -21,6 +27,10 @@ const navItems = [
     href: "https://wa.me/556295128248?text=Olá!%20Vim%20pelo%20site%20da%20Aguilera%20Distribuidora.%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20e%20gostaria%20de%20saber%20se%20há%20oportunidades%20disponíveis.%20Agradeço%20pela%20atenção!",
   },
 ]
+
+// ==============================
+// REDES SOCIAIS
+// ==============================
 
 const socials = [
   {
@@ -46,12 +56,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50">
 
-      {/* Barra superior */}
+      {/* ==============================
+          BARRA SUPERIOR
+      ============================== */}
+
       <div className="bg-navy text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
 
           {/* Telefone */}
-          <div className="hidden lg:flex items-center gap-2 text-sm font-medium whitespace-nowrap">
+          <div className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium lg:flex">
             <span>📞</span>
             <span>(65) 2018 3300</span>
           </div>
@@ -60,6 +73,7 @@ export function SiteHeader() {
           <Link
             href="https://castrillon.portaldocliente.online/"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-center text-xs font-medium leading-relaxed transition-colors hover:text-brand-red sm:text-sm"
           >
             Acesse o Portal do Cliente para Segunda Via de Boletos e NFe.
@@ -71,6 +85,8 @@ export function SiteHeader() {
               <li key={label}>
                 <Link
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`${label} Aguilera`}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#C20E1A] hover:bg-[#C20E1A]"
                 >
@@ -83,7 +99,10 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Header */}
+      {/* ==============================
+          HEADER PRINCIPAL
+      ============================== */}
+
       <div className="border-b border-slate-200 bg-white shadow-md">
         <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-5">
 
@@ -92,10 +111,14 @@ export function SiteHeader() {
             <Logo />
           </div>
 
-          {/* Menu Desktop */}
+          {/* ==============================
+              MENU DESKTOP
+          ============================== */}
+
           <div className="hidden justify-self-center lg:block">
             <nav aria-label="Menu principal">
               <ul className="flex items-center gap-8 font-heading text-[15px] font-semibold uppercase tracking-wide text-navy">
+
                 {navItems.map((item) => (
                   <li key={item.label}>
                     <Link
@@ -106,27 +129,43 @@ export function SiteHeader() {
                     </Link>
                   </li>
                 ))}
+
               </ul>
             </nav>
           </div>
 
-          {/* Direita */}
+          {/* ==============================
+              LADO DIREITO
+          ============================== */}
+
           <div className="flex items-center justify-self-end gap-3">
 
+            {/* B2B */}
+            <Link
+              href={B2B_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center justify-center rounded-xl bg-brand-red px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-[#a80c17] lg:flex"
+            >
+              Acessar B2B
+            </Link>
+
+            {/* WhatsApp */}
             <Link
               href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#1EBE5D]"
+              className="hidden items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#1EBE5D] lg:flex"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Fale com a gente
             </Link>
 
+            {/* Menu Mobile */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              aria-label="Abrir menu"
+              aria-label={open ? "Fechar menu" : "Abrir menu"}
               aria-expanded={open}
               className="flex h-10 w-10 items-center justify-center rounded-md text-navy lg:hidden"
             >
@@ -141,7 +180,10 @@ export function SiteHeader() {
 
         </div>
 
-        {/* Menu Mobile */}
+        {/* ==============================
+            MENU MOBILE
+        ============================== */}
+
         {open && (
           <nav
             className="border-t border-slate-200 bg-white lg:hidden"
@@ -149,6 +191,7 @@ export function SiteHeader() {
           >
             <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2 font-heading text-sm font-medium tracking-wide text-navy">
 
+              {/* Links */}
               {navItems.map((item) => (
                 <li
                   key={item.label}
@@ -156,6 +199,7 @@ export function SiteHeader() {
                 >
                   <Link
                     href={item.href}
+                    onClick={() => setOpen(false)}
                     className="block py-3 transition-colors hover:text-brand-red"
                   >
                     {item.label}
@@ -163,7 +207,26 @@ export function SiteHeader() {
                 </li>
               ))}
 
+              {/* ==============================
+                  B2B MOBILE
+              ============================== */}
+
               <li className="pt-4">
+                <Link
+                  href={B2B_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center rounded-xl bg-brand-red px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-all duration-300 hover:bg-[#a80c17]"
+                >
+                  Acessar B2B
+                </Link>
+              </li>
+
+              {/* ==============================
+                  WHATSAPP MOBILE
+              ============================== */}
+
+              <li className="pt-3 pb-4">
                 <Link
                   href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento."
                   target="_blank"
