@@ -11,7 +11,7 @@ export function HeroSection() {
         {/* Texto */}
         <div className="w-full lg:w-[48%]">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-brand-red">
-            PEÇAS • AGRÍCOLA • LEVE • PESADA
+            LEVE • PESADO • UTILITÁRIO • AGRICOLA
           </p>
 
           <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-navy lg:text-6xl">
