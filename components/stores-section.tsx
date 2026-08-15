@@ -7,8 +7,8 @@ import { ComplaintsCard } from "./complaints-card"
 export function StoresSection() {
   return (
     <section
-      id="centros-distribuicao"
-      className="bg-white py-24"
+      id="lojas"
+      className="scroll-mt-40 bg-white py-24"
     >
       <div className="container mx-auto px-6">
 

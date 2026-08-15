@@ -20,7 +20,7 @@ const B2B_URL = "https://b2b.castrillon.com.br/portal/login"
 const navItems = [
   { label: "HOME", href: "/" },
   { label: "AGUILERA", href: "/aguilera" },
-  { label: "LOJAS", href: "/lojas" },
+  { label: "LOJAS", href: "/#lojas" },
   { label: "FABRICANTES", href: "/#fabricantes" },
   {
     label: "TRABALHE CONOSCO",
@@ -191,7 +191,6 @@ export function SiteHeader() {
           >
             <ul className="mx-auto flex max-w-7xl flex-col px-4 py-2 font-heading text-sm font-medium tracking-wide text-navy">
 
-              {/* Links */}
               {navItems.map((item) => (
                 <li
                   key={item.label}
