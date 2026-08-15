@@ -1,15 +1,51 @@
-import Link from "next/link";
-import { ManufacturersMarquee } from "./manufacturers-marquee";
-import { HeroCarousel } from "./hero-carrossel";
+"use client"
+
+import { useState } from "react"
+import { ManufacturersMarquee } from "./manufacturers-marquee"
+import { HeroCarousel } from "./hero-carrossel"
+import { WhatsAppSelector } from "@/components/whatsapp-selector"
+
+const whatsappCompanies = [
+  {
+    name: "Cuiabá",
+    description: "Atendimento comercial",
+    phone: "556596984127",
+  },
+  {
+    name: "Goiânia",
+    description: "Atendimento comercial",
+    phone: "556295128248",
+  },
+  {
+    name: "Palmas",
+    description: "Atendimento comercial",
+    phone: "556392297936",
+  },
+  {
+    name: "Belém",
+    description: "Atendimento comercial",
+    phone: "559182501220",
+  },
+]
 
 export function HeroSection() {
+  const [whatsappOpen, setWhatsappOpen] = useState(false)
+
   return (
     <section className="bg-white">
-      {/* Conteúdo Principal */}
+
+      {/* ==============================
+          CONTEÚDO PRINCIPAL
+      ============================== */}
+
       <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-16 px-6 py-8 lg:flex-row lg:gap-20 lg:py-10">
 
-        {/* Texto */}
+        {/* ==============================
+            TEXTO
+        ============================== */}
+
         <div className="w-full lg:w-[48%]">
+
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-brand-red">
             LEVE • PESADO • UTILITÁRIO • AGRICOLA
           </p>
@@ -28,37 +64,87 @@ export function HeroSection() {
             do mercado e atendimento especializado.
           </p>
 
+          {/* ==============================
+              BOTÕES
+          ============================== */}
+
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
+
+            {/* CONHEÇA A AGUILERA */}
+
+            <a
               href="/aguilera#conheca-aguilera"
-              className="rounded-md bg-brand-red px-8 py-4 text-center font-semibold text-white transition hover:bg-red-700"
+              className="
+                rounded-md
+                bg-brand-red
+                px-8
+                py-4
+                text-center
+                font-semibold
+                text-white
+                transition
+                hover:bg-red-700
+              "
             >
               Conheça a Aguilera
-            </Link>
+            </a>
 
-            <Link
-              href="https://wa.me/556295128248"
-              target="_blank"
-              className="rounded-md border-2 border-navy px-8 py-4 text-center font-semibold text-navy transition hover:bg-navy hover:text-white"
+            {/* FALE CONOSCO */}
+
+            <button
+              type="button"
+              onClick={() => setWhatsappOpen(true)}
+              className="
+                rounded-md
+                border-2
+                border-navy
+                bg-white
+                px-8
+                py-4
+                text-center
+                font-semibold
+                text-navy
+                transition
+                hover:bg-navy
+                hover:text-white
+              "
             >
               Fale conosco
-            </Link>
+            </button>
+
           </div>
         </div>
 
-        {/* Banner */}
+        {/* ==============================
+            BANNER
+        ============================== */}
+
         <div className="w-full lg:w-[52%]">
           <HeroCarousel />
         </div>
 
       </div>
 
-      {/* Fabricantes */}
+      {/* ==============================
+          FABRICANTES
+      ============================== */}
+
       <div className="w-full bg-white py-8">
         <div className="mx-auto max-w-screen-2xl px-6">
           <ManufacturersMarquee />
         </div>
       </div>
+
+      {/* ==============================
+          CENTRAL DO WHATSAPP
+      ============================== */}
+
+      <WhatsAppSelector
+        open={whatsappOpen}
+        onClose={() => setWhatsappOpen(false)}
+        companies={whatsappCompanies}
+      />
+
     </section>
-  );
+  )
 }

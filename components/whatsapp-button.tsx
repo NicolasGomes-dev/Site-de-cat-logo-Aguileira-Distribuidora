@@ -1,15 +1,49 @@
-import Link from "next/link"
-import { WhatsAppIcon } from "@/components/social-icons"
+"use client"
 
-export function WhatsAppButton() {
+import { useState } from "react"
+import { WhatsAppSelector } from "@/components/whatsapp-selector"
+import { WhatsAppIcon } from "@/components/social-icons"
+import { whatsappCompanies } from "@/lib/whatsapp"
+
+type WhatsAppButtonProps = {
+  children?: React.ReactNode
+  className?: string
+}
+
+export function WhatsAppButton({
+  children = "Fale com a gente",
+  className = "",
+}: WhatsAppButtonProps) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <Link
-      href="https://wa.me/556295128248?text=Olá!%20Vim%20pela%20página%20da%20Aguilera%20Distribuidora%20e%20gostaria%20de%20solicitar%20um%20orçamento.." target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Falar no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[oklch(0.65_0.17_155)] text-white shadow-lg transition-transform hover:scale-110"
-    >
-      <WhatsAppIcon className="h-7 w-7" />
-    </Link>
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          console.log("BOTÃO WHATSAPP CLICADO")
+          setOpen(true)
+        }}
+        className={`
+          relative
+          z-[10001]
+          pointer-events-auto
+          cursor-pointer
+          ${className}
+        `}
+      >
+        <WhatsAppIcon className="h-5 w-5" />
+
+        <span>
+          {children}
+        </span>
+      </button>
+
+      <WhatsAppSelector
+        open={open}
+        onClose={() => setOpen(false)}
+        companies={whatsappCompanies}
+      />
+    </>
   )
 }
