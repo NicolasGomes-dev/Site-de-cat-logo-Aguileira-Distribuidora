@@ -6,10 +6,13 @@ import { ComplaintsCard } from "./complaints-card"
 
 export function StoresSection() {
   return (
-    <section className="bg-white py-24">
+    <section
+      id="centros-distribuicao"
+      className="bg-white py-24"
+    >
       <div className="container mx-auto px-6">
 
-        {/* Cabeçalho */}
+        {/* CABEÇALHO */}
         <div className="mb-14 text-center">
           <span className="inline-flex rounded-full bg-brand-red/10 px-5 py-2 text-sm font-semibold tracking-wide text-brand-red">
             NOSSAS LOJAS
@@ -20,23 +23,27 @@ export function StoresSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            Uma rede de distribuição preparada para entregar autopeças com rapidez,
-            eficiência e confiança.
+            Uma rede de distribuição preparada para entregar autopeças
+            com rapidez, eficiência e confiança.
           </p>
         </div>
 
-        {/* Mapa + Lista */}
+        {/* MAPA + LISTA */}
         <div className="grid items-start gap-16 lg:grid-cols-[520px_1fr]">
 
-          {/* Mapa */}
-          <StoresMap />
+          {/* MAPA */}
+          <div>
+            <StoresMap />
+          </div>
 
-          {/* Lista de Centros de Distribuição */}
-          <StoresList />
+          {/* LISTA */}
+          <div id="lista-centros-distribuicao">
+            <StoresList />
+          </div>
 
         </div>
 
-        {/* Canal de Reclamações */}
+        {/* CANAL DE RECLAMAÇÕES */}
         <div className="mt-20">
           <ComplaintsCard />
         </div>

@@ -1,29 +1,26 @@
-import { ReelsCarousel } from "./reels-carousel";
-import { StockGallery } from "./stock-gallery";
+import { ReelsCarousel } from "./reels-carousel"
+import { StockGallery } from "./stock-gallery"
+import { TeamSection } from "./team-section"
 
 export function CompanyShowcase() {
   return (
-    <section className="border-t border-slate-200 bg-gradient-to-b from-slate-50 to-blue-50 py-24">
+    <section className="border-t border-slate-200 bg-slate-50 py-16">
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="rounded-[32px] bg-white p-8 shadow-xl lg:p-14">
+        {/* Reels */}
+        <ReelsCarousel />
 
-          {/* Cabeçalho */}
-          <div className="mx-auto mb-16 max-w-3xl text-center">
+        {/* Estoque */}
+        <div className="mt-16">
+          <StockGallery />
+        </div>
 
-          </div>
-
-          {/* Reels */}
-          <ReelsCarousel />
-
-          {/* Galeria */}
-          <div className="mt-20">
-            <StockGallery />
-          </div>
-
+        {/* Equipe */}
+        <div className="mt-16">
+          <TeamSection />
         </div>
 
       </div>
     </section>
-  );
+  )
 }
