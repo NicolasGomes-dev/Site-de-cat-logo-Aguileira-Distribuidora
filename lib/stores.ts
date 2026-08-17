@@ -3,8 +3,8 @@ export const stores = [
     id: 1,
     name: "Mato Grosso",
     uf: "MT",
-    x: "40%",
-    y: "38%",
+    x: "46%",
+    y: "48%",
     stores: [
       {
         id: 1,
@@ -25,8 +25,8 @@ export const stores = [
     id: 2,
     name: "Goiás",
     uf: "GO",
-    x: "53%",
-    y: "48%",
+    x: "55%",
+    y: "53%",
     stores: [
       {
         id: 1,
@@ -48,7 +48,7 @@ export const stores = [
     name: "Pará",
     uf: "PA",
     x: "55%",
-    y: "18%",
+    y: "24%",
     stores: [
       {
         id: 1,
@@ -69,8 +69,8 @@ export const stores = [
     id: 5,
     name: "Piauí",
     uf: "PI",
-    x: "68%",
-    y: "32%",
+    x: "69%",
+    y: "34%",
     stores: [
       {
         id: 1,
@@ -91,8 +91,8 @@ export const stores = [
     id: 6,
     name: "Tocantins",
     uf: "TO-AR",
-    x: "57%",
-    y: "29%",
+    x: "60%",
+    y: "40%",
     stores: [
       {
         id: 1,
