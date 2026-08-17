@@ -29,7 +29,7 @@ const locations = [
 
 const phones = [
   {
-    name: "Pará",
+    name: "Belém",
     phone: "(91) 8250-1220",
     whatsapp: "559182501220",
   },

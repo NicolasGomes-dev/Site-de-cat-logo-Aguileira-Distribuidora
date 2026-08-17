@@ -8,7 +8,7 @@ import { WhatsAppSelector } from "./whatsapp-selector"
 
 const whatsappCompanies = [
   {
-    name: "Pará",
+    name: "Belém",
     description: "91 8250-1220",
     phone: "559182501220",
   },
