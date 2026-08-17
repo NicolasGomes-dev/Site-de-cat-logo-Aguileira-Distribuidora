@@ -8,29 +8,29 @@ import { WhatsAppSelector } from "./whatsapp-selector"
 
 const whatsappCompanies = [
   {
-    name: "Cuiabá",
-    description: "Atendimento comercial",
-    phone: "556596984127",
-  },
-  {
-    name: "Goiânia",
-    description: "Atendimento comercial",
-    phone: "556295128248",
-  },
-  {
-    name: "Palmas",
-    description: "Atendimento comercial",
-    phone: "556392297936",
-  },
-  {
-    name: "Belém",
-    description: "Atendimento comercial",
+    name: "Pará",
+    description: "91 8250-1220",
     phone: "559182501220",
   },
   {
+    name: "Araguaína",
+    description: "63 9229-7936",
+    phone: "556392297936",
+  },
+  {
+    name: "Cuiabá",
+    description: "65 9698-4127",
+    phone: "556596984127",
+  },
+  {
     name: "Teresina",
-    description: "Atendimento comercial",
+    description: "86 9486-8872",
     phone: "558694868872",
+  },
+  {
+    name: "Goiânia",
+    description: "62 9512-8248",
+    phone: "556295128248",
   },
 ]
 
