@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import { MessageCircle } from "lucide-react"
 import { ManufacturersMarquee } from "./manufacturers-marquee"
 import { HeroCarousel } from "./hero-carrossel"
-import { WhatsAppSelector } from "@/components/whatsapp-selector"
+import { WhatsAppSelector } from "./whatsapp-selector"
 
 const whatsappCompanies = [
   {
@@ -26,6 +27,11 @@ const whatsappCompanies = [
     description: "Atendimento comercial",
     phone: "559182501220",
   },
+  {
+    name: "Teresina",
+    description: "Atendimento comercial",
+    phone: "558694868872",
+  },
 ]
 
 export function HeroSection() {
@@ -38,7 +44,21 @@ export function HeroSection() {
           CONTEÚDO PRINCIPAL
       ============================== */}
 
-      <div className="mx-auto flex max-w-screen-2xl flex-col-reverse items-center gap-16 px-6 py-8 lg:flex-row lg:gap-20 lg:py-10">
+      <div
+        className="
+          mx-auto
+          flex
+          max-w-screen-2xl
+          flex-col-reverse
+          items-center
+          gap-16
+          px-6
+          py-8
+          lg:flex-row
+          lg:gap-20
+          lg:py-10
+        "
+      >
 
         {/* ==============================
             TEXTO
@@ -75,6 +95,10 @@ export function HeroSection() {
             <a
               href="/aguilera#conheca-aguilera"
               className="
+                inline-flex
+                cursor-pointer
+                items-center
+                justify-center
                 rounded-md
                 bg-brand-red
                 px-8
@@ -82,8 +106,10 @@ export function HeroSection() {
                 text-center
                 font-semibold
                 text-white
-                transition
+                transition-all
+                duration-300
                 hover:bg-red-700
+                active:scale-95
               "
             >
               Conheça a Aguilera
@@ -93,8 +119,14 @@ export function HeroSection() {
 
             <button
               type="button"
+              aria-label="Abrir opções de WhatsApp"
               onClick={() => setWhatsappOpen(true)}
               className="
+                inline-flex
+                cursor-pointer
+                items-center
+                justify-center
+                gap-2
                 rounded-md
                 border-2
                 border-navy
@@ -104,15 +136,20 @@ export function HeroSection() {
                 text-center
                 font-semibold
                 text-navy
-                transition
+                transition-all
+                duration-300
                 hover:bg-navy
                 hover:text-white
+                active:scale-95
               "
             >
-              Fale conosco
+              <MessageCircle className="h-5 w-5" />
+
+              <span>Fale conosco</span>
             </button>
 
           </div>
+
         </div>
 
         {/* ==============================
@@ -136,7 +173,7 @@ export function HeroSection() {
       </div>
 
       {/* ==============================
-          CENTRAL DO WHATSAPP
+          SELETOR DE WHATSAPP
       ============================== */}
 
       <WhatsAppSelector

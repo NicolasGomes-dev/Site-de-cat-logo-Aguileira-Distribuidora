@@ -1,11 +1,11 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
 import { Oswald, Barlow } from "next/font/google"
+
 import "./globals.css"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const oswald = Oswald({
   variable: "--font-heading",
@@ -20,9 +20,12 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
-  title: "Aguilera Distribuidora de Peças – mais de 1 milhão de peças em estoque",
+  title:
+    "Aguilera Distribuidora de Peças – mais de 1 milhão de peças em estoque",
+
   description:
     "Linha Agrícola, Leve e Utilitários, Pesada e Extra Pesada. Mais de 1 milhão de peças em estoque.",
+
   generator: "v0.app",
 
   icons: {
@@ -31,11 +34,9 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  colorScheme: "light",
+
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({
@@ -46,20 +47,24 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${oswald.variable} ${barlow.variable} bg-background`}
+      className={`${oswald.variable} ${barlow.variable}`}
     >
       <body className="font-sans antialiased">
+
+        {/* HEADER */}
         <SiteHeader />
 
-        {/* Espaço reservado para o header fixo */}
-        <main className="pt-0">
+        {/* CONTEÚDO */}
+        <main>
           {children}
         </main>
 
+        {/* FOOTER */}
         <SiteFooter />
-        <WhatsAppButton />
 
+        {/* ANALYTICS */}
         {process.env.NODE_ENV === "production" && <Analytics />}
+
       </body>
     </html>
   )

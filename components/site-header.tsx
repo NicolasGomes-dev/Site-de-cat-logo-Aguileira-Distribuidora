@@ -3,34 +3,52 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+
 import { Logo } from "@/components/logo"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+
 import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
 } from "@/components/social-icons"
 
-// ==============================
-// LINKS PRINCIPAIS
-// ==============================
+// ============================================
+// LINK DO PORTAL B2B
+// ============================================
 
 const B2B_URL = "https://b2b.castrillon.com.br/portal/login"
 
+// ============================================
+// MENU PRINCIPAL
+// ============================================
+
 const navItems = [
-  { label: "HOME", href: "/" },
-  { label: "AGUILERA", href: "/aguilera" },
-  { label: "LOJAS", href: "/#lojas" },
-  { label: "FABRICANTES", href: "/#fabricantes" },
+  {
+    label: "HOME",
+    href: "/",
+  },
+  {
+    label: "AGUILERA",
+    href: "/aguilera",
+  },
+  {
+    label: "LOJAS",
+    href: "/#lojas",
+  },
+  {
+    label: "FABRICANTES",
+    href: "/#fabricantes",
+  },
   {
     label: "TRABALHE CONOSCO",
-    href: "https://wa.me/556295128248?text=Olá!%20Vim%20pelo%20site%20da%20Aguilera%20Distribuidora.%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20e%20gostaria%20de%20saber%20se%20há%20oportunidades%20disponíveis.%20Agradeço%20pela%20atenção!",
+    href: "https://wa.me/556295128248?text=Olá!%20Vim%20pelo%20site%20da%20Aguilera%20Distribuidora.%20Tenho%20interesse%20em%20fazer%20parte%20da%20equipe%20e%20gostaria%20de%20saber%20se%20há%20oportunidades%20disponíveis.",
   },
 ]
 
-// ==============================
+// ============================================
 // REDES SOCIAIS
-// ==============================
+// ============================================
 
 const socials = [
   {
@@ -50,169 +68,278 @@ const socials = [
   },
 ]
 
-// ==============================
+// ============================================
 // HEADER
-// ==============================
+// ============================================
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header
-      className="relative z-[99999] isolate pointer-events-auto"
-      style={{ pointerEvents: "auto" }}
-    >
+    <header className="relative z-[1000] w-full">
 
-      {/* ==============================
+      {/* =====================================================
           BARRA SUPERIOR
-      ============================== */}
+      ===================================================== */}
 
-      <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div className="w-full bg-navy text-white">
+
+        <div
+          className="
+            mx-auto
+            flex
+            min-h-[54px]
+            max-w-screen-2xl
+            items-center
+            justify-between
+            gap-4
+            px-6
+          "
+        >
 
           {/* TELEFONE */}
-          <div className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium lg:flex">
-            <span>📞</span>
-            <span>(65) 2018 3300</span>
+
+          <div
+            className="
+              hidden
+              items-center
+              gap-2
+              whitespace-nowrap
+              text-sm
+              font-semibold
+              lg:flex
+            "
+          >
+            <span className="text-brand-red">
+              ☎
+            </span>
+
+            <span>
+              (65) 2018 3300
+            </span>
           </div>
 
+
           {/* PORTAL DO CLIENTE */}
-          <Link
+
+          <a
             href="https://castrillon.portaldocliente.online/"
             target="_blank"
             rel="noopener noreferrer"
             className="
+              flex-1
               text-center
               text-xs
-              font-medium
-              leading-relaxed
+              font-semibold
+              leading-5
               transition-colors
+              duration-200
               hover:text-brand-red
               sm:text-sm
             "
           >
             Acesse o Portal do Cliente para Segunda Via de Boletos e NFe.
-          </Link>
+          </a>
+
 
           {/* REDES SOCIAIS */}
-          <ul className="flex items-center gap-2">
+
+          <div className="flex items-center gap-2">
+
             {socials.map(({ label, href, Icon }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${label} Aguilera`}
-                  className="
-                    flex
-                    h-9
-                    w-9
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-white/10
-                    text-white
-                    backdrop-blur-sm
-                    transition-all
-                    duration-300
-                    hover:scale-110
-                    hover:border-[#C20E1A]
-                    hover:bg-[#C20E1A]
-                  "
-                >
-                  <Icon className="h-4 w-4" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-        </div>
-      </div>
-
-      {/* ==============================
-          HEADER PRINCIPAL
-      ============================== */}
-
-      <div className="border-b border-slate-200 bg-white shadow-md">
-
-        <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-5">
-
-          {/* LOGO */}
-          <div className="justify-self-start">
-            <Logo />
-          </div>
-
-          {/* ==============================
-              MENU DESKTOP
-          ============================== */}
-
-          <div className="hidden justify-self-center lg:block">
-            <nav aria-label="Menu principal">
-
-              <ul
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} Aguilera`}
                 className="
                   flex
+                  h-9
+                  w-9
+                  cursor-pointer
                   items-center
-                  gap-8
-                  font-heading
-                  text-[15px]
-                  font-semibold
-                  uppercase
-                  tracking-wide
-                  text-navy
+                  justify-center
+                  rounded-full
+                  border
+                  border-white/20
+                  bg-white/10
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                  hover:border-brand-red
+                  hover:bg-brand-red
                 "
               >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
 
-                {navItems.map((item) => (
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================================
+          HEADER PRINCIPAL
+      ===================================================== */}
+
+      <div
+        className="
+          relative
+          z-[1001]
+          w-full
+          border-b
+          border-slate-200
+          bg-white
+          shadow-md
+        "
+      >
+
+        <div
+          className="
+            mx-auto
+            flex
+            min-h-[100px]
+            max-w-screen-2xl
+            items-center
+            justify-between
+            gap-6
+            px-6
+          "
+        >
+
+          {/* =================================================
+              LOGO
+          ================================================= */}
+
+          <Link
+            href="/"
+            aria-label="Aguilera Distribuidora - Página inicial"
+            className="
+              relative
+              z-[1002]
+              flex
+              shrink-0
+              cursor-pointer
+              items-center
+            "
+          >
+            <Logo />
+          </Link>
+
+
+          {/* =================================================
+              MENU DESKTOP
+          ================================================= */}
+
+          <nav
+            className="
+              hidden
+              flex-1
+              justify-center
+              lg:flex
+            "
+            aria-label="Menu principal"
+          >
+
+            <ul
+              className="
+                flex
+                items-center
+                justify-center
+                gap-7
+                font-heading
+                text-[15px]
+                font-semibold
+                uppercase
+                tracking-wide
+                text-navy
+              "
+            >
+
+              {navItems.map((item) => {
+
+                const external = item.href.startsWith("http")
+
+                return (
                   <li key={item.label}>
-                    <Link
+
+                    <a
                       href={item.href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
                       className="
                         relative
+                        flex
+                        cursor-pointer
+                        items-center
+                        whitespace-nowrap
+                        py-2
                         transition-colors
                         duration-300
                         hover:text-brand-red
-                        after:absolute
-                        after:left-0
-                        after:-bottom-2
-                        after:h-[2px]
-                        after:w-0
-                        after:bg-brand-red
-                        after:transition-all
-                        hover:after:w-full
                       "
                     >
                       {item.label}
-                    </Link>
+
+                      <span
+                        className="
+                          absolute
+                          bottom-0
+                          left-0
+                          h-[2px]
+                          w-0
+                          bg-brand-red
+                          transition-all
+                          duration-300
+                          hover:w-full
+                        "
+                      />
+                    </a>
+
                   </li>
-                ))}
+                )
 
-              </ul>
+              })}
 
-            </nav>
-          </div>
+            </ul>
 
-          {/* ==============================
-              LADO DIREITO
-          ============================== */}
+          </nav>
 
-          <div className="flex items-center justify-self-end gap-3">
 
-            {/* B2B DESKTOP */}
-            <Link
+          {/* =================================================
+              BOTÕES DESKTOP
+          ================================================= */}
+
+          <div
+            className="
+              hidden
+              shrink-0
+              items-center
+              gap-3
+              lg:flex
+            "
+          >
+
+            {/* B2B */}
+
+            <a
               href={B2B_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="
-                hidden
+                flex
+                h-[46px]
+                cursor-pointer
                 items-center
                 justify-center
                 rounded-xl
                 bg-brand-red
                 px-5
-                py-3
                 text-sm
                 font-bold
                 uppercase
@@ -222,197 +349,217 @@ export function SiteHeader() {
                 transition-all
                 duration-300
                 hover:scale-105
-                hover:bg-[#a80c17]
-                lg:flex
+                hover:bg-red-700
+                active:scale-95
               "
             >
-              Acessar B2B
-            </Link>
+              ACESSAR B2B
+            </a>
 
-            {/* WHATSAPP DESKTOP */}
+
+            {/* WHATSAPP */}
+
             <WhatsAppButton
               className="
-                hidden
+                flex
+                h-[46px]
+                cursor-pointer
                 items-center
+                justify-center
                 gap-2
                 rounded-xl
                 bg-[#25D366]
                 px-6
-                py-3
                 text-sm
                 font-semibold
                 text-white
+                shadow-sm
                 transition-all
                 duration-300
                 hover:scale-105
                 hover:bg-[#1EBE5D]
-                lg:flex
+                active:scale-95
               "
             />
 
-            {/* ==============================
-                MENU MOBILE
-            ============================== */}
-
-            <button
-              type="button"
-              onClick={() => {
-                console.log("MENU MOBILE CLICADO")
-                setOpen((value) => !value)
-              }}
-              aria-label={open ? "Fechar menu" : "Abrir menu"}
-              aria-expanded={open}
-              className="
-                relative
-                z-[99999]
-                flex
-                h-10
-                w-10
-                cursor-pointer
-                items-center
-                justify-center
-                rounded-md
-                bg-white
-                text-navy
-                pointer-events-auto
-                lg:hidden
-              "
-            >
-              {open ? (
-                <X className="h-6 w-6 pointer-events-none" />
-              ) : (
-                <Menu className="h-6 w-6 pointer-events-none" />
-              )}
-            </button>
-
           </div>
+
+
+          {/* =================================================
+              BOTÃO MENU MOBILE
+          ================================================= */}
+
+          <button
+            type="button"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+            className="
+              relative
+              z-[1003]
+              flex
+              h-11
+              w-11
+              cursor-pointer
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-slate-200
+              bg-white
+              text-navy
+              transition-all
+              duration-200
+              hover:bg-slate-50
+              active:scale-95
+              lg:hidden
+            "
+          >
+            {open ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
 
         </div>
 
-        {/* ==============================
+
+        {/* =====================================================
             MENU MOBILE
-        ============================== */}
+        ===================================================== */}
 
         {open && (
-          <nav
+          <div
             className="
               relative
-              z-[99998]
+              z-[1002]
               border-t
               border-slate-200
               bg-white
+              shadow-lg
               lg:hidden
             "
-            aria-label="Menu principal"
           >
 
-            <ul
-              className="
-                mx-auto
-                flex
-                max-w-7xl
-                flex-col
-                px-4
-                py-2
-                font-heading
-                text-sm
-                font-medium
-                tracking-wide
-                text-navy
-              "
+            <nav
+              aria-label="Menu mobile"
+              className="mx-auto max-w-screen-2xl px-6"
             >
 
-              {/* ==============================
-                  LINKS
-              ============================== */}
+              <ul className="flex flex-col">
 
-              {navItems.map((item) => (
-                <li
-                  key={item.label}
-                  className="border-b border-slate-200 last:border-0"
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setOpen(false)}
+                {navItems.map((item) => {
+
+                  const external = item.href.startsWith("http")
+
+                  return (
+                    <li
+                      key={item.label}
+                      className="border-b border-slate-200 last:border-0"
+                    >
+
+                      <a
+                        href={item.href}
+                        target={external ? "_blank" : undefined}
+                        rel={
+                          external
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        onClick={() => setOpen(false)}
+                        className="
+                          flex
+                          min-h-[52px]
+                          cursor-pointer
+                          items-center
+                          font-heading
+                          text-sm
+                          font-semibold
+                          uppercase
+                          tracking-wide
+                          text-navy
+                          transition-colors
+                          duration-200
+                          hover:text-brand-red
+                        "
+                      >
+                        {item.label}
+                      </a>
+
+                    </li>
+                  )
+
+                })}
+
+
+                {/* B2B MOBILE */}
+
+                <li className="py-4">
+
+                  <a
+                    href={B2B_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="
-                      block
-                      py-3
-                      transition-colors
-                      hover:text-brand-red
+                      flex
+                      h-[48px]
+                      cursor-pointer
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-brand-red
+                      px-5
+                      text-sm
+                      font-bold
+                      uppercase
+                      tracking-wide
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-red-700
+                      active:scale-95
                     "
                   >
-                    {item.label}
-                  </Link>
+                    ACESSAR B2B
+                  </a>
+
                 </li>
-              ))}
 
-              {/* ==============================
-                  B2B MOBILE
-              ============================== */}
 
-              <li className="pt-4">
+                {/* WHATSAPP MOBILE */}
 
-                <Link
-                  href={B2B_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    flex
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-brand-red
-                    px-5
-                    py-3
-                    text-sm
-                    font-bold
-                    uppercase
-                    tracking-wide
-                    text-white
-                    shadow-sm
-                    transition-all
-                    duration-300
-                    hover:bg-[#a80c17]
-                  "
-                >
-                  Acessar B2B
-                </Link>
+                <li className="pb-5">
 
-              </li>
+                  <WhatsAppButton
+                    className="
+                      flex
+                      h-[48px]
+                      w-full
+                      cursor-pointer
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-xl
+                      bg-[#25D366]
+                      px-5
+                      text-sm
+                      font-semibold
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-[#1EBE5D]
+                      active:scale-95
+                    "
+                  />
 
-              {/* ==============================
-                  WHATSAPP MOBILE
-              ============================== */}
+                </li>
 
-              <li className="pb-4 pt-3">
+              </ul>
 
-                <WhatsAppButton
-                  className="
-                    flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    bg-[#25D366]
-                    px-5
-                    py-3
-                    text-sm
-                    font-semibold
-                    text-white
-                    pointer-events-auto
-                    cursor-pointer
-                    transition-all
-                    duration-300
-                    hover:bg-[#1EBE5D]
-                  "
-                />
+            </nav>
 
-              </li>
-
-            </ul>
-
-          </nav>
+          </div>
         )}
 
       </div>

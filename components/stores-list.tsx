@@ -1,22 +1,28 @@
-import { MapPin, Phone } from "lucide-react"
+import { MapPin, Phone, MessageCircle } from "lucide-react"
 import { stores } from "@/lib/stores"
 
-const storeCoordinates: Record<string, string> = {
-  Cuiabá: "-15.636389,-56.044750",
-  Araguaína: "-7.216833,-48.245278",
-  Pará: "-1.365361,-48.336417",
-  Belém: "-1.365361,-48.336417",
-  Teresina: "-5.118500,-42.797333",
-}
-
 function getMapsUrl(city: string, fallbackUrl?: string) {
-  const coordinate = storeCoordinates[city]
-
-  if (coordinate) {
-    return `https://www.google.com/maps?q=${coordinate}`
+  if (fallbackUrl && fallbackUrl !== "#") {
+    return fallbackUrl
   }
 
-  return fallbackUrl || "#"
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${city}, Brasil`
+  )}`
+}
+
+function getWhatsAppNumber(phone: string) {
+  return phone.replace(/\D/g, "")
+}
+
+function getWhatsAppUrl(city: string, phone: string) {
+  const number = getWhatsAppNumber(phone)
+
+  const message = encodeURIComponent(
+    `Olá! Vim pelo site da Aguilera Distribuidora e gostaria de entrar em contato com a unidade de ${city}.`
+  )
+
+  return `https://wa.me/55${number}?text=${message}`
 }
 
 export function StoresList() {
@@ -31,20 +37,32 @@ export function StoresList() {
           className="scroll-mt-32"
         >
 
-          {/* TÍTULO */}
+          {/* ==============================
+              TÍTULO DO ESTADO
+          ============================== */}
+
           <div className="mb-5 border-b border-slate-200 pb-3">
             <h2 className="text-3xl font-bold text-navy">
               {state.name}
             </h2>
           </div>
 
-          {/* CARDS */}
+          {/* ==============================
+              LOJAS
+          ============================== */}
+
           <div className="grid grid-cols-1 gap-6">
 
             {state.stores.map((store) => {
+
               const mapsUrl = getMapsUrl(
                 store.city,
                 store.maps
+              )
+
+              const whatsappUrl = getWhatsAppUrl(
+                store.city,
+                store.phone
               )
 
               return (
@@ -64,6 +82,10 @@ export function StoresList() {
                   "
                 >
 
+                  {/* ==============================
+                      NOME DA CIDADE
+                  ============================== */}
+
                   <h3 className="text-2xl font-bold text-navy">
                     {store.city}
                   </h3>
@@ -72,27 +94,60 @@ export function StoresList() {
                     {store.type}
                   </p>
 
+                  {/* ==============================
+                      INFORMAÇÕES
+                  ============================== */}
+
                   <div className="mt-6 space-y-4">
 
-                    <div className="flex items-center gap-3 text-slate-600">
-                      <MapPin className="h-5 w-5 shrink-0 text-brand-red" />
+                    {/* ENDEREÇO */}
 
-                      <span>
+                    <div className="flex items-start gap-3 text-slate-600">
+
+                      <MapPin
+                        className="
+                          mt-0.5
+                          h-5
+                          w-5
+                          shrink-0
+                          text-brand-red
+                        "
+                      />
+
+                      <span className="leading-6">
                         {store.address}
                       </span>
+
                     </div>
 
+                    {/* TELEFONE */}
+
                     <div className="flex items-center gap-3 text-slate-600">
-                      <Phone className="h-5 w-5 shrink-0 text-brand-red" />
+
+                      <Phone
+                        className="
+                          h-5
+                          w-5
+                          shrink-0
+                          text-brand-red
+                        "
+                      />
 
                       <span className="font-medium">
                         {store.phone}
                       </span>
+
                     </div>
 
                   </div>
 
+                  {/* ==============================
+                      BOTÕES
+                  ============================== */}
+
                   <div className="mt-6 flex flex-wrap gap-3">
+
+                    {/* GOOGLE MAPS */}
 
                     <a
                       href={mapsUrl}
@@ -113,14 +168,18 @@ export function StoresList() {
                         duration-300
                         hover:bg-red-700
                         hover:shadow-md
+                        active:scale-95
                       "
                     >
                       <MapPin className="h-4 w-4" />
+
                       Ver localização
                     </a>
 
+                    {/* WHATSAPP DA UNIDADE */}
+
                     <a
-                      href={`https://wa.me/${store.whatsapp}`}
+                      href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="
@@ -128,7 +187,7 @@ export function StoresList() {
                         items-center
                         gap-2
                         rounded-xl
-                        bg-green-500
+                        bg-[#25D366]
                         px-5
                         py-3
                         text-sm
@@ -136,10 +195,13 @@ export function StoresList() {
                         text-white
                         transition-all
                         duration-300
-                        hover:bg-green-600
+                        hover:bg-[#1EBE5D]
                         hover:shadow-md
+                        active:scale-95
                       "
                     >
+                      <MessageCircle className="h-4 w-4" />
+
                       WhatsApp
                     </a>
 
