@@ -18,27 +18,29 @@ export function WhatsAppButton({
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => {
-          console.log("BOTÃO WHATSAPP CLICADO")
-          setOpen(true)
-        }}
-        className={`
-          relative
-          z-[10001]
-          pointer-events-auto
-          cursor-pointer
-          ${className}
-        `}
-      >
-        <WhatsAppIcon className="h-5 w-5" />
+      {/* BOTÃO FLUTUANTE */}
+      {!open && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Abrir opções de WhatsApp"
+          className={`
+            relative
+            z-[10001]
+            pointer-events-auto
+            cursor-pointer
+            ${className}
+          `}
+        >
+          <WhatsAppIcon className="h-5 w-5" />
 
-        <span>
-          {children}
-        </span>
-      </button>
+          <span>
+            {children}
+          </span>
+        </button>
+      )}
 
+      {/* POPUP */}
       <WhatsAppSelector
         open={open}
         onClose={() => setOpen(false)}

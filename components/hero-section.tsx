@@ -23,11 +23,6 @@ const whatsappCompanies = [
     phone: "556596984127",
   },
   {
-    name: "Teresina",
-    description: "86 9486-8872",
-    phone: "558694868872",
-  },
-  {
     name: "Goiânia",
     description: "62 9512-8248",
     phone: "556295128248",
