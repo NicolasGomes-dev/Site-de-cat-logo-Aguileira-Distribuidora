@@ -44,28 +44,6 @@ export const stores = [
   },
 
   {
-    id: 3,
-    name: "Tocantins",
-    uf: "TO",
-    x: "58%",
-    y: "33%",
-    stores: [
-      {
-        id: 1,
-        city: "Palmas",
-        type: "Centro de Distribuição",
-        address:
-          "Endereço do Centro de Distribuição em Palmas - TO",
-        phone: "(63) 9229-7936",
-        description:
-          "Centro de distribuição responsável pelo estado de Tocantins.",
-        maps:
-          "https://www.google.com/maps/search/?api=1&query=Aguilera+Distribuidora+Palmas+TO",
-      },
-    ],
-  },
-
-  {
     id: 4,
     name: "Pará",
     uf: "PA",
